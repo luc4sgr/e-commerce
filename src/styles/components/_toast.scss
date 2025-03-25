@@ -1,0 +1,142 @@
+:root {
+    --toast-success-color: #10b981;
+    --toast-error-color: #ef4444;
+    --toast-warning-color: #f59e0b;
+    --toast-info-color: #3b82f6;
+    --toast-default-color: #6b7280;
+    
+    --toast-bg-color: #ffffff;
+    --toast-text-color: #0f172a;
+    --toast-border-radius: 8px;
+    --toast-shadow: rgba(0, 0, 0, 0.12) 0px 10px 15px -3px, rgba(0, 0, 0, 0.08) 0px 4px 6px -2px;
+  }
+
+  [data-sonner-toaster][data-theme="light"] {
+    --toast-background: var(--toast-bg-color);
+    --toast-border: 1px solid rgba(0, 0, 0, 0.06);
+    --toast-success-border: 1px solid color-mix(in srgb, var(--toast-success-color) 20%, transparent);
+    --toast-error-border: 1px solid color-mix(in srgb, var(--toast-error-color) 20%, transparent);
+    --toast-warning-border: 1px solid color-mix(in srgb, var(--toast-warning-color) 20%, transparent);
+    --toast-info-border: 1px solid color-mix(in srgb, var(--toast-info-color) 20%, transparent);
+  }
+
+  [data-sonner-toast] {
+    box-shadow: var(--toast-shadow) !important;
+    border-radius: var(--toast-border-radius) !important;
+    padding: 12px 16px !important;
+    font-family: var(--font-family-base) !important;
+
+    &[data-type="success"] {
+      --toast-border: var(--toast-success-border);
+      background-color: color-mix(in srgb, var(--toast-success-color) 5%, var(--toast-bg-color)) !important;
+      
+      [data-icon] {
+        color: var(--toast-success-color);
+      }
+    }
+
+    &[data-type="error"] {
+      --toast-border: var(--toast-error-border);
+      background-color: color-mix(in srgb, var(--toast-error-color) 5%, var(--toast-bg-color)) !important;
+      
+      [data-icon] {
+        color: var(--toast-error-color);
+      }
+    }
+
+    &[data-type="warning"] {
+      --toast-border: var(--toast-warning-border);
+      background-color: color-mix(in srgb, var(--toast-warning-color) 5%, var(--toast-bg-color)) !important;
+      
+      [data-icon] {
+        color: var(--toast-warning-color);
+      }
+    }
+
+    &[data-type="info"] {
+      --toast-border: var(--toast-info-border);
+      background-color: color-mix(in srgb, var(--toast-info-color) 5%, var(--toast-bg-color)) !important;
+      
+      [data-icon] {
+        color: var(--toast-info-color);
+      }
+    }
+
+    [data-heading] {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--toast-text-color);
+      margin-bottom: 4px;
+    }
+
+    [data-description] {
+      font-size: 13px;
+      color: rgba(var(--toast-text-color), 0.8);
+      line-height: 1.5;
+    }
+
+    [data-button] {
+      font-weight: 500;
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 4px;
+      background-color: #f1f5f9;
+      transition: background-color 0.2s ease;
+      
+      &:hover {
+        background-color: #e2e8f0;
+      }
+    }
+
+    [data-close-button] {
+      opacity: 0.5;
+      transition: opacity 0.2s ease;
+      
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  [data-sonner-toast][data-type="loading"] {
+    [data-icon] {
+      animation: sonner-spin 1s linear infinite;
+    }
+  }
+  
+  @keyframes sonner-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  [data-sonner-toaster][data-theme="dark"] {
+    --toast-background: #1e293b;
+    --toast-border: 1px solid rgba(255, 255, 255, 0.08);
+    --toast-text-color: #f1f5f9;
+    --toast-success-border: 1px solid color-mix(in srgb, var(--toast-success-color) 30%, transparent);
+    --toast-error-border: 1px solid color-mix(in srgb, var(--toast-error-color) 30%, transparent);
+    --toast-warning-border: 1px solid color-mix(in srgb, var(--toast-warning-color) 30%, transparent);
+    --toast-info-border: 1px solid color-mix(in srgb, var(--toast-info-color) 30%, transparent);
+    
+    [data-sonner-toast] {
+      [data-heading] {
+        color: white;
+      }
+      
+      [data-description] {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      [data-button] {
+        background-color: #334155;
+        
+        &:hover {
+          background-color: #475569;
+        }
+      }
+    }
+  }
