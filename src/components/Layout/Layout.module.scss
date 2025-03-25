@@ -1,0 +1,132 @@
+.layout {
+    display: flex;
+    height: 100vh;
+    background-color: #f4f6f9;
+    transition: var(--transition-medium);
+    position: relative;
+  
+    &.sidebarOpen {
+      @media (min-width: 769px) {
+        .mainContent {
+          margin-left: 260px;
+        }
+      }
+    }
+  }
+  
+  .mainContent {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: margin-left var(--transition-medium);
+    width: 100%;
+    
+    @media (min-width: 769px) {
+      margin-left: 0;
+    }
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: var(--spacing-md);
+    overflow-y: auto;
+    background-color: #f4f6f9;
+  }
+  
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 90;
+    backdrop-filter: blur(1px);
+  }
+  
+  .pageWrapper {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  
+    h1 {
+      margin-bottom: var(--spacing-md);
+      color: #333;
+    }
+  }
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    font-size: 0.9rem;
+    color: #666;
+  
+    .breadcrumbItem {
+      display: flex;
+      align-items: center;
+  
+      &:not(:last-child) {
+        &::after {
+          content: '/';
+          margin: 0 var(--spacing-xs);
+          color: #ccc;
+        }
+      }
+  
+      a {
+        color: var(--color-primary);
+        text-decoration: none;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+  
+      &.active {
+        color: #333;
+        font-weight: 500;
+      }
+    }
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    
+    .cardHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--spacing-md);
+      
+      h2 {
+        color: #333;
+        font-size: 1.2rem;
+        margin: 0;
+      }
+      
+      .cardActions {
+        display: flex;
+        gap: var(--spacing-sm);
+      }
+    }
+    
+    .cardContent {
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .cardFooter {
+      display: flex;
+      justify-content: flex-end;
+      gap: var(--spacing-sm);
+      padding-top: var(--spacing-md);
+      border-top: 1px solid #eaeaea;
+    }
+  }
