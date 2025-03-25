@@ -1,0 +1,152 @@
+.topbar {
+    height: 64px;
+    background-color: white;
+    border-bottom: 1px solid #eaeaea;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .topbarContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 var(--spacing-md);
+  }
+  
+  .menuToggle {
+    background: none;
+    border: none;
+    color: #555;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color var(--transition-fast);
+    
+    &:hover {
+      background-color: #f4f6f9;
+    }
+  }
+  
+  .userSection {
+    display: flex;
+    align-items: center;
+  }
+  
+  .userInfo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    border-radius: 4px;
+    margin-right: var(--spacing-md);
+    
+    svg {
+      color: #555;
+    }
+    
+    span {
+      color: #333;
+      font-weight: 500;
+    }
+  }
+  
+  .logoutButton {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+    border: none;
+    background-color: transparent;
+    color: #666;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+    
+    &:hover {
+      background-color: #f5f5f5;
+      color: var(--color-danger);
+    }
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .actionButton {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    border-radius: 50%;
+    position: relative;
+    transition: background-color var(--transition-fast);
+    
+    &:hover {
+      background-color: #f4f6f9;
+    }
+    
+    .badge {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background-color: var(--color-danger);
+      color: white;
+      font-size: 0.7rem;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+  }
+  
+  .searchContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0 var(--spacing-lg);
+    flex-grow: 1;
+    max-width: 400px;
+    
+    @media (max-width: 768px) {
+      display: none;
+    }
+    
+    input {
+      width: 100%;
+      padding: var(--spacing-xs) var(--spacing-md) var(--spacing-xs) 40px;
+      border: none;
+      background-color: #f4f6f9;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(var(--color-primary-rgb), 0.2);
+      }
+    }
+    
+    svg {
+      position: absolute;
+      left: var(--spacing-sm);
+      color: #999;
+    }
+  }
