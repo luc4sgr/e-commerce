@@ -1,0 +1,314 @@
+.searchContainer {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    
+    input {
+      width: 100%;
+      padding: 10px 10px 10px 38px;
+      border: 1px solid #ced4da;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+      
+      &:focus {
+        outline: none;
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+      }
+    }
+    
+    .searchIcon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #6c757d;
+    }
+  }
+  
+  .ordersList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .orderCard {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border: 1px solid #e9ecef;
+  }
+  
+  .orderHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    
+    &:hover {
+      background-color: #f8f9fa;
+    }
+    
+    @media (max-width: 576px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  }
+  
+  .orderInfo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+    @media (max-width: 576px) {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+  
+  .orderId {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    
+    svg {
+      color: #6c757d;
+    }
+  }
+  
+  .orderDate {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #6c757d;
+    font-size: 0.9rem;
+  }
+  
+  .orderMeta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+    @media (max-width: 576px) {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+  
+  .orderStatus {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid;
+    font-size: 0.85rem;
+    font-weight: 500;
+    
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  
+  .orderPrice {
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  
+  .expandButton {
+    background: none;
+    border: none;
+    color: #6c757d;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    
+    &:hover {
+      background-color: #f1f3f5;
+    }
+  }
+  
+  .orderDetails {
+    padding: 0 20px 20px;
+    border-top: 1px solid #e9ecef;
+    overflow: hidden;
+  }
+  
+  .orderItems {
+    h3 {
+      font-size: 1rem;
+      margin: 15px 0;
+      color: #343a40;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      
+      th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #e9ecef;
+      }
+      
+      th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+        color: #495057;
+        font-size: 0.9rem;
+      }
+      
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+      
+      tfoot {
+        font-weight: 600;
+        
+        .totalLabel {
+          text-align: right;
+        }
+        
+        .totalValue {
+          color: var(--color-primary);
+        }
+      }
+      
+      @media (max-width: 576px) {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  }
+  
+  .orderActions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: flex-end;
+    
+    @media (max-width: 576px) {
+      flex-direction: column;
+    }
+    
+    button {
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .viewDetailsButton {
+      background-color: #f1f3f5;
+      color: #495057;
+      border: 1px solid #dee2e6;
+      
+      &:hover {
+        background-color: #e9ecef;
+      }
+    }
+    
+    .cancelOrderButton {
+      background-color: white;
+      color: #ef4444;
+      border: 1px solid #ef4444;
+      
+      &:hover {
+        background-color: rgba(239, 68, 68, 0.05);
+      }
+    }
+  }
+  
+  .loadingContainer,
+  .errorContainer,
+  .emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .spinner {
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 3px solid var(--color-primary);
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+  }
+  
+  .errorContainer {
+    svg {
+      margin-bottom: 15px;
+    }
+    
+    p {
+      color: #6c757d;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .emptyState {
+    h3 {
+      margin-top: 15px;
+      color: #343a40;
+    }
+    
+    p {
+      color: #6c757d;
+      margin-bottom: 20px;
+    }
+    
+    .shopNowButton {
+      display: inline-block;
+      background-color: var(--color-primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.2s ease;
+      
+      &:hover {
+        background-color: var(--color-primary-dark);
+      }
+    }
+  }
+  
+  .retryButton {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    
+    &:hover {
+      background-color: var(--color-primary-dark);
+    }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
